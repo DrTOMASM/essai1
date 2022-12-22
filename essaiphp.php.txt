@@ -1,0 +1,14 @@
+<?php
+  // Récupère les données du formulaire
+  $diagnostic = $_POST['diagnostic'];
+  $symptomes = $_POST['symptomes'];
+  $traitement = $_POST['traitement'];
+  $commentaires = $_POST['commentaires'];
+  $email = $_POST['email'];
+
+  // Prépare le contenu du message
+  $message = "Diagnostic : $diagnostic\n\nSymptômes :\n$symptomes\n\nTraitement :\n$traitement\n\nCommentaires :\n$commentaires";
+
+  // Envoie le message par courriel
+  mail($email, "Rapport de cas", $message);
+?>
